@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee</title>
+    <style>
+        /* Styles omitted for brevity */
+    </style>
+</head>
+<body>
+    <h1><center>Employee Management</h1>
+    
+    <!-- Add Employee Form -->
+    <form action="employee" method="post">
+        <h2>Add Employee</h2>
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" step="1" required><br>
+        Department: <input type="text" name="Department" required><br>
+        <input type="hidden" name="action" value="add">
+        <button type="submit">Add Employee</button>
+    </form>
+    
+    <!-- Update Employee Form -->
+    <form action="employee" method="post">
+        <h2>Update Employee</h2>
+        ID: <input type="number" name="id" required><br>
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Department: <input type="text" name="department" required><br>
+        <input type="hidden" name="action" value="update">
+        <button type="submit">Update Employee</button>
+    </form>
+
+    <!-- Delete Employee Form -->
+    <form action="employee" method="post">
+        <h2>Delete Employee</h2>
+        ID: <input type="number" name="id" required><br>
+        <input type="hidden" name="action" value="delete">
+        <button type="submit">Delete Employee</button>
+    </form>
+
+    <!-- View All Employees Form -->
+    <form action="employee" method="get">
+        <h2>View All Employees</h2>
+        <input type="hidden" name="action" value="view">
+        <button type="submit">View All Employees</button>
+    </form>
+</body>
+</html>

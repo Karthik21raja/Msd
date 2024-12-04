@@ -1,0 +1,96 @@
+[
+  {
+    "name": "ram",
+    "gender": "male",
+    "designation": "it",
+    "departmentDetails": {
+      "departmentDetails": {
+        "Department 1": {
+          "jobTitles": [
+            "test des"
+          ]
+        },
+        "Department 2": {
+          "jobTitles": [
+            "des ig"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "Logesh",
+    "gender": "Male",
+    "designation": "IT",
+    "departmentDetails": {
+      "departmentDetails": {
+        "Department 1": {
+          "jobTitles": [
+            "Devloper"
+          ]
+        },
+        "Department 2": {
+          "jobTitles": [
+            "It"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "mahi",
+    "gender": "male",
+    "designation": "cri",
+    "departmentDetails": {
+      "departmentDetails": {
+        "Department 1": {
+          "jobTitles": [
+            "bat"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "mike",
+    "gender": "male",
+    "designation": "sys",
+    "departmentDetails": {
+      "departmentDetails": {
+        "Department 1": {
+          "jobTitles": [
+            "admin"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "kavya",
+    "gender": "female",
+    "designation": "network",
+    "departmentDetails": {
+      "departmentDetails": {
+        "Department 1": {
+          "jobTitles": [
+            "cyber"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "ram",
+    "gender": "male\\",
+    "designation": "is",
+    "departmentDetails": {
+      "departmentDetails": {
+        "Department 1": {
+          "jobTitles": [
+            "fir"
+          ]
+        }
+      }
+    }
+  }
+]
