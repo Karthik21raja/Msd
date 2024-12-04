@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form container styling */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title for each form */
+        h2 {
+            color: #555;
+            text-align: center;
+        }
+
+        /* Form input field styling */
+        input[type="text"], 
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Form label styling */
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* View Employees button style */
+        .view-button {
+            background-color: #008CBA;
+        }
+        .view-button:hover {
+            background-color: #007B9E;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Fetching Employee Details</h1>
+    <form action="employee" method="post">
+        <h2>Add Employee</h2>
+        Name: <input type="text" name="name"><br>
+        Age: <input type="number" name="age" step="0.01"><br>
+        Department:<input type="text" name="Department" step="0.01"><br>
+        <input type="hidden" name="action" value="add">
+        <button type="submit">Add Fruit</button>
+    </form>
+    <form action="employee" method="post">
+        <h2>Update Employee</h2>
+        ID: <input type="number" name="id" required><br>
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" step="1" required><br>
+        Department: <input type="text" name="department" required><br>
+        <input type="hidden" name="action" value="update">
+        <button type="submit">Update Employee</button>
+    </form>
+    
+    <form action="employee" method="post">
+        <h2>Delete Employee</h2>
+        ID: <input type="number" name="id"><br>
+        <input type="hidden" name="action" value="delete">
+        <button type="submit">Delete Employee</button>
+    </form>
+    
+    <form action="employee" method="get">
+        <h2>View All Employees</h2>
+        <input type="hidden" name="action" value="view">
+        <button type="submit">All Employees In The Organization</button>
+    </form>
+</body>
+</html>
