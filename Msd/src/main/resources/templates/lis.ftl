@@ -22,8 +22,10 @@
 		<m:DefinitionID>ORMSEARCH</m:DefinitionID>
 		<m:Customer>
 			<c:SourceBankingBusiness>MBWW</c:SourceBankingBusiness>
-			<c:Mnemonic>AMALGA</c:Mnemonic>
+			<c:Mnemonic>${customerId}</c:Mnemonic>
 		</m:Customer>
-		<m:Status>NEW</m:Status>
+		<#list filters as filters>
+		<m:Status>${filters.status}</m:Status>
+		</#list>
 	</m:SearchMastersRequest>
 </ServiceRequest>

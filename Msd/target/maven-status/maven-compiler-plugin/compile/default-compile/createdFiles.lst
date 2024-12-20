@@ -1,0 +1,5 @@
+com\example\Msd\MsdApplication.class
+com\example\Msd\service\Conne.class
+com\example\Msd\service\CreServ.class
+com\example\Msd\service\Resol.class
+com\example\Msd\controller\Crecontroller.class
