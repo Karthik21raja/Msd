@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Msd.entity.Dataforjson;
+import com.example.Msd.entity.Detailform;
+import com.example.Msd.entity.Listform;
 import com.example.Msd.service.Conne;
 import com.example.Msd.service.CreServ;
 import com.example.Msd.service.Resol;
@@ -206,6 +208,7 @@ public class Crecontroller {
 	return CreServ.processMockApi(mockUrl, xmlOutput, ftlFilePath, theirReference, dataMasterID);
 
 	}
+	
 	 @PostMapping("/dataforjson")
 	    public String createCustomer(@RequestBody Dataforjson customerRequest) throws IOException, TemplateException, Resol {
 	      
@@ -219,6 +222,125 @@ public class Crecontroller {
 	        return generateJsontoJsonCreatebydata(jsondata);
 	    }
 
+	 public String generateJsonlist(String jsonContent) throws IOException, TemplateException {
+
+		  String ftlContent = new String(
+		    Files.readAllBytes(Paths.get("src/main/resources/templates/listform.ftl")));
+		  StringWriter writer = new StringWriter();
+
+		  Configuration config = new Configuration(Configuration.VERSION_2_3_31);
+		  Template template = new Template("template", new StringReader(ftlContent), config);
+		  ObjectMapper objectMapper = new ObjectMapper();
+		  Map<String, Object> dataModel = objectMapper.readValue(jsonContent, Map.class);
+
+		  template.process(dataModel, writer);
+		  logger.info(writer.toString());
+
+		  return writer.toString();
+		 }
+
+		 public String generateJsontoJsonListbydata(String jsonContent) throws IOException, TemplateException, Resol {
+
+		  String ftlContent = new String(
+		    Files.readAllBytes(Paths.get("src/main/resources/templates/lis.ftl")));
+
+		  String mockUrl = "http://bsit-srv04:8003/tiplus2-deploy2/hello";
+		  String xmlOutput = jjService.processTemplate(jsonContent, ftlContent);
+		  logger.info(xmlOutput);
+
+		  XmlMapper xmlMapper = new XmlMapper();
+
+		  JsonNode jsonNode = xmlMapper.readTree(xmlOutput);
+
+		  ObjectMapper objectMapper = new ObjectMapper();
+
+		  String jsonData = objectMapper.writeValueAsString(jsonNode);
+
+		  JsonNode rootNode = objectMapper.readTree(jsonData);
+
+		  String theirReference = rootNode.path("TFCPCCRT").path("Context").path("TheirReference").asText();
+
+		  String dataMasterID = dataForMasterID();
+		  logger.info(theirReference);
+
+		  String ftlFilePath = new String(
+		    Files.readAllBytes(Paths.get("src/main/resources/templates/lisjs.ftl")));
+
+		  return CreServ.processMockApi(mockUrl, xmlOutput, ftlFilePath, theirReference, dataMasterID);
+
+		 }
+
+		 @PostMapping("/listform")
+		 public String listform(@RequestBody Listform json) throws IOException, TemplateException, Resol {
+
+		  System.out.println("Received data: " + json);
+		  ObjectMapper objectMapper = new ObjectMapper();
+		  String jsonString = objectMapper.writeValueAsString(json);
+		  System.out.println(jsonString);
+		  String jsondata = generateJsonlist(jsonString);
+
+		  return generateJsontoJsonListbydata(jsondata);
+		 }
+
+		 public String generateJsondetails(String jsonContent) throws IOException, TemplateException {
+
+		  String ftlContent = new String(
+		    Files.readAllBytes(Paths.get("src/main/resources/templates/detailform.ftl")));
+		  StringWriter writer = new StringWriter();
+
+		  Configuration config = new Configuration(Configuration.VERSION_2_3_31);
+		  Template template = new Template("template", new StringReader(ftlContent), config);
+		  ObjectMapper objectMapper = new ObjectMapper();
+		  Map<String, Object> dataModel = objectMapper.readValue(jsonContent, Map.class);
+
+		  template.process(dataModel, writer);
+		  logger.info(writer.toString());
+
+		  return writer.toString();
+		 }
+
+		 public String generateJsontoJsonDetailsbydata(String jsonContent) throws IOException, TemplateException, Resol {
+
+		  String ftlContent = new String(
+		    Files.readAllBytes(Paths.get("src/main/resources/templates/det.ftl")));
+
+		  String mockUrl = "http://bsit-srv04:8003/tiplus2-deploy2/hello";
+		  String xmlOutput = jjService.processTemplate(jsonContent, ftlContent);
+		  logger.info(xmlOutput);
+
+		  XmlMapper xmlMapper = new XmlMapper();
+
+		  JsonNode jsonNode = xmlMapper.readTree(xmlOutput);
+
+		  ObjectMapper objectMapper = new ObjectMapper();
+
+		  String jsonData = objectMapper.writeValueAsString(jsonNode);
+
+		  JsonNode rootNode = objectMapper.readTree(jsonData);
+
+		  String theirReference = rootNode.path("TFCPCCRT").path("Context").path("TheirReference").asText();
+
+		  String dataMasterID = dataForMasterID();
+		  logger.info(theirReference);
+
+		  String ftlFilePath = new String(
+		    Files.readAllBytes(Paths.get("src/main/resources/templates/detjs.ftl")));
+
+		  return CreServ.processMockApi(mockUrl, xmlOutput, ftlFilePath, theirReference, dataMasterID);
+
+		 }
+
+		 @PostMapping("/detailsform")
+		 public String detailsform(@RequestBody Detailform json) throws IOException, TemplateException, Resol {
+
+		  System.out.println("Received data: " + json);
+		  ObjectMapper objectMapper = new ObjectMapper();
+		  String jsonString = objectMapper.writeValueAsString(json);
+		  System.out.println(jsonString);
+		  String jsondata = generateJsondetails(jsonString);
+
+		  return generateJsontoJsonDetailsbydata(jsondata);
+		 }
 
 
 }

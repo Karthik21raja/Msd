@@ -104,7 +104,56 @@
     <version>1.9.3</version>
     <scope>test</scope>
 </dependency>
-	</dependencies>
+<dependency>
+    <groupId>com.networknt</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>1.0.77</version> <!-- Choose the latest version -->
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.15.2</version> <!-- Choose the latest version -->
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.15.2</version> <!-- Choose the latest version -->
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.15.2</version> <!-- Choose the latest version -->
+</dependency>
+
+    <!-- NetworkNT JSON Schema Validator -->
+    <dependency>
+        <groupId>com.networknt</groupId>
+        <artifactId>json-schema-validator</artifactId>
+        <version>1.0.77</version>
+    </dependency>
+
+    <!-- Jackson Dependencies for JSON parsing -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.15.2</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.15.2</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.15.2</version>
+    </dependency>
+	<dependency>
+		<groupId>com</groupId>
+		<artifactId>demo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+</dependencies>
 	
 
 	<build>

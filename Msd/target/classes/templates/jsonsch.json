@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string"
+     
+    },
+    "lastName": {
+      "type": "string"
+      },
+     
+      
+	  "age": {
+      "type": "integer",
+      "minimum": 18,
+      
+	 
+      "message": {
+		 "minimum": "Age in years which must be equal to or greater than eighteen in order to vote."
+		 
+    }
+	
+	}
+	
+    },
+   "required": ["firstName", "lastName", "age"],
+    "message": {
+		 "required": "Age is necessary"
+		 
+    },
+   "additionalProperties": true
+  }
