@@ -1,0 +1,4 @@
+2025-01-20 11:07:16,647 WARN  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: Unable to start LiveReload server
+2025-01-20 11:07:16,679 WARN  [restartedMain] o.s.c.s.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-01-20 11:08:57,566 WARN  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: Unable to start LiveReload server
+2025-01-20 11:08:57,582 WARN  [restartedMain] o.s.c.s.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
